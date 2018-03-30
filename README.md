@@ -1,0 +1,1 @@
+for Josh's code I noticed that his closing braces were not not indented properly. To fix this I made sure no indentation happened when the program reached the final closing brace(if last brace break). Next I made sure to check if the first character is a brace and to lower the indentation by one if the case was met.
