@@ -51,10 +51,28 @@ void indent(string filename){
     opens += countChar(line, '{');
     closes += countChar(line, '}');
     int level = opens - closes;
+    cout<<level;
     for(int i = 0; i < level; i++){
-      for(int j = 0; j < 5; j++){
-        cout << ' ';
+      //if(closes==1)  closes is 1 when the last brace
+      //{
+          //break;//this fixes the last brace
+      //}
+      //else if (line[0]=='}') //if the first character is }
+      //{
+        //for(int j = 0; j < 4; j++){ indentation should be reduced
+        //by one
+            //cout << ' ';
+          //}//having issues fixing the semi last brace because
+          //there is no different between that line and the one before it
+          //in terms of closes,opens, and level 
+      //}
+      else
+      {
+        for(int j = 0; j < 5; j++){
+            cout << ' ';
+        }
       }
+
     }
   }
   inputStream.close();
