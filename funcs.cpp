@@ -47,33 +47,25 @@ void indent(string filename){
   int opens = 0;
   int closes = 0;
   while(getline(inputStream, line)){
-    cout << removeLeadingSpaces(line) << endl;
+    cout << removeLeadingSpaces(line) << endl;//change this line for line 51
+    // for this; line=removeLeadingSpaces(line)
     opens += countChar(line, '{');
     closes += countChar(line, '}');
     int level = opens - closes;
+    //if(line[0]=='}')//this checks for closing braces and reduces indentation by 1
+    //{
+        //levels-=1;
+    //}
     cout<<level;
+    //string correctline=""
     for(int i = 0; i < level; i++){
-      //if(closes==1)  closes is 1 when the last brace
-      //{
-          //break;//this fixes the last brace
-      //}
-      //else if (line[0]=='}') //if the first character is }
-      //{
-        //for(int j = 0; j < 4; j++){ indentation should be reduced
-        //by one
-            //cout << ' ';
-          //}//having issues fixing the semi last brace because
-          //there is no different between that line and the one before it
-          //in terms of closes,opens, and level 
-      //}
-      else
-      {
-        for(int j = 0; j < 5; j++){
+      //correctline+='\t';
+      for(int j = 0; j < 5; j++){//this loop can be avoided if you use '\t' instead(line 62)
             cout << ' ';
-        }
       }
-
+      //correctline+=line
     }
   }
+  //cout<<correctline;
   inputStream.close();
 }
